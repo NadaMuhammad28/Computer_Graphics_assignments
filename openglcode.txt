@@ -1,0 +1,370 @@
+
+#include<windows.h>
+#include<GL\glut.h>
+#include<GL\gl.h>
+
+int p1[2] = {475,300};
+int p2[2] = {525,300};
+int p3[2] = {525,500};
+int p4[2] = {475,500};
+int p5[2] = {500,580};
+int p6[2] = {525,450};
+int p7[2] = {575,450};
+int p8[2] = {425,450};
+int p9[2] = {475,450};
+int p10[2] = {525,350};
+int p11[2] = {605,325};
+int p12[2] = {580,250};
+int p13[2] = {565,325};
+
+int p14[2] = {395,325};
+int p15[2] = {420,250};
+int p16[2] = {435,325};
+int p17[2] = {475,350};
+
+// orange flame
+int p18[2] = {472,300};
+int p19[2] = {440,240};
+int p20[2] = {500,170};
+int p21[2] = {560,240};
+int p22[2] = {528,300};
+
+//yellow flame
+
+int p23[2] = {468,270};
+int p24[2] = {532,270};
+int p25[2] = {500,230};
+
+
+
+
+
+void linesegment (void)
+{
+    //orange flame
+glColor3b(255.0, 42.0, 0.0);
+glBegin(GL_POLYGON) ;
+
+glVertex2iv(p18);
+glVertex2iv(p19);
+glVertex2iv(p20);
+glVertex2iv(p21);
+glVertex2iv(p22);
+
+// yellow
+
+glColor3b(255.0,196.0,0.0);
+glBegin(GL_POLYGON) ;
+
+glVertex2iv(p1);
+glVertex2iv(p23);
+glVertex2iv(p25);
+glVertex2iv(p24);
+glVertex2iv(p2);
+
+glEnd();
+
+    //body of the rocket
+glColor3f(1.0,1.0,1.0) ;
+glBegin(GL_QUAD_STRIP);
+glVertex2iv(p1);
+glVertex2iv(p2);
+glVertex2iv(p4);
+glVertex2iv(p3);
+//glVertex2iv(p5);
+glEnd();
+//head of the rocket
+glColor3b(39.0, 75.0, 121.0) ;
+glBegin(GL_TRIANGLES) ;
+glVertex2iv(p4);
+glVertex2iv(p3);
+glVertex2iv(p5);
+glEnd();
+ //triangle on the top right
+
+glColor3f(1.0,0,0) ;
+glBegin(GL_TRIANGLES) ;
+
+glVertex2iv(p3);
+glVertex2iv(p6);
+glVertex2iv(p7);
+
+glEnd();
+
+
+ //triangle on the top left
+
+glColor3f(1.0,0,0) ;
+glBegin(GL_POLYGON) ;
+
+glVertex2iv(p4);
+glVertex2iv(p8);
+glVertex2iv(p9);
+
+glEnd();
+
+
+//shape on the bottom right
+
+glColor3f(1.0,0,0) ;
+glBegin(GL_QUAD_STRIP) ;
+glVertex2iv(p12);
+glVertex2iv(p13);
+glVertex2iv(p2);
+glVertex2iv(p10);
+glVertex2iv(p11);
+
+glEnd();
+
+//shape on the bottom right
+
+glColor3f(1.0,0,0) ;
+glBegin(GL_QUAD_STRIP) ;
+glVertex2iv(p15);
+glVertex2iv(p16);
+glVertex2iv(p1);
+glVertex2iv(p17);
+glVertex2iv(p14);
+
+glEnd();
+
+
+	//points and stars
+
+
+
+//star
+glColor3f(1.0,1.0,1.0);
+glBegin(GL_TRIANGLES);
+glVertex2f(875,543);
+glVertex2f(870,535);
+glVertex2f(880,535);
+glVertex2f(875,532);
+glVertex2f(870,540);
+glVertex2f(880,540);
+glEnd();
+
+//star2
+glColor3f(1.0,1.0,1.0);
+glBegin(GL_TRIANGLES);
+glVertex2f(375,598);
+glVertex2f(370,590);
+glVertex2f(380,590);
+glVertex2f(375,587);
+glVertex2f(370,595);
+glVertex2f(380,595);
+glEnd();
+
+//star3
+glColor3f(1.0,1.0,1.0);
+glBegin(GL_TRIANGLES);
+glVertex2f(750,628);
+glVertex2f(745,620);
+glVertex2f(755,620);
+glVertex2f(750,618);
+glVertex2f(745,625);
+glVertex2f(755,625);
+glEnd();
+
+//star4
+glColor3f(1.0,1.0,1.0);
+glBegin(GL_TRIANGLES);
+glVertex2f(200,628);
+glVertex2f(195,620);
+glVertex2f(205,620);
+glVertex2f(200,618);
+glVertex2f(195,625);
+glVertex2f(205,625);
+glEnd();
+
+
+//star5
+glColor3f(1.0,1.0,1.0);
+glBegin(GL_TRIANGLES);
+glVertex2f(300,468);
+glVertex2f(295,460);
+glVertex2f(305,460);
+glVertex2f(300,458);
+glVertex2f(295,465);
+glVertex2f(305,465);
+
+glEnd();
+//little stars
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(800,400);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(400,400);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(200,400);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(800,200);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(200,200);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(200,600);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(100,528);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(575,653);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(980,640);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(970,610);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(800,610);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(240,100);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(240,200);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(940,200);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(240,600);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(520,100);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(510,90);
+glEnd();
+
+
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(510,700);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(510,750);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(410,750);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(310,750);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(600,750);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(900,750);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glEnable(GL_POINT_SMOOTH);
+glPointSize(2);
+glBegin(GL_POINTS);
+glVertex2f(800,300);
+glEnd();
+
+
+
+
+
+
+
+	glFlush();
+
+}
+
+
+
+void init (void)
+{
+	glClearColor(0.0,0.0,0.0,0.0); //specifies clear 	values for the color buffers (R,G,B,Alpha)
+	glMatrixMode(GL_PROJECTION); // sets the 	current matrix mode
+	glLoadIdentity();
+	gluOrtho2D(0,1000,0,800); //2D orthographic 	projection matrix (left,right,bottom,top)
+}
+int main (int argc, char** argv)
+{
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); //sets 	the initial display mode
+	glutInitWindowPosition(100,50); //sets the initial window 	position
+    	glutInitWindowSize(1000,800); //sets the initial window size
+    	glutCreateWindow("Line"); // creates the window with name line
+	init();
+	glutDisplayFunc(linesegment); //sets the display callback for 	the current window.
+	glutMainLoop(); // enters the GLUT event processing loop
+return 0;
+}
